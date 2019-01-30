@@ -1,0 +1,5 @@
+fragment Meetup on Meetup {
+  _id
+  title
+  description
+}

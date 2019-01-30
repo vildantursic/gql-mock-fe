@@ -1,0 +1,7 @@
+#import "./MeetupFragment.gql"
+
+query meetups {
+  meetups {
+    ...Meetup
+  }
+}

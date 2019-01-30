@@ -1,0 +1,7 @@
+#import "./MeetupFragment.gql"
+
+subscription meetupAdded {
+  meetupAdded {
+    ...Meetup
+  }
+}

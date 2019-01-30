@@ -1,0 +1,6 @@
+subscription voteAdded {
+  voteAdded {
+    left
+    right
+  }
+}

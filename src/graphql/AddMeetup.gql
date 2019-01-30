@@ -1,0 +1,7 @@
+#import "./MeetupFragment.gql"
+
+mutation addMeetup ($input: MeetupInput!) {
+  addMeetup (input: $input) {
+    ...Meetup
+  }
+}

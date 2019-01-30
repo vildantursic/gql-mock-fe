@@ -1,0 +1,6 @@
+query numOfVotes {
+  numOfVotes {
+    left
+    right
+  }
+}
