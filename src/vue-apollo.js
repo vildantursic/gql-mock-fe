@@ -12,9 +12,7 @@ Vue.use(VueApollo);
 const AUTH_TOKEN = 'apollo-token';
 
 // Http endpoint
-// const httpEndpoint = process.env.VUE_APP_GRAPHQL_HTTP || 'https://gql-mock-be.herokuapp.com/graphql';
-const httpEndpoint = 'http://localhost:4000/graphql';
-// const httpEndpoint = 'https://gql-mock-be.herokuapp.com/graphql';
+const httpEndpoint = process.env.VUE_APP_GRAPHQL_HTTP || 'http://localhost:4000/graphql';
 
 // Config
 const defaultOptions = {
@@ -22,9 +20,7 @@ const defaultOptions = {
   httpEndpoint,
   // You can use `wss` for secure connection (recommended in production)
   // Use `null` to disable subscriptions
-  // wsEndpoint: process.env.VUE_APP_GRAPHQL_WS || 'ws://gql-mock-be.herokuapp.com:4000/graphql',
-  wsEndpoint: 'ws://localhost:4000/graphql',
-  // wsEndpoint: 'wss://gql-mock-be.herokuapp.com/graphql',
+  wsEndpoint: process.env.VUE_APP_GRAPHQL_WS || 'ws://localhost:4000/graphql',
 
   // LocalStorage token
   // tokenName: AUTH_TOKEN,
