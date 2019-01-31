@@ -32,6 +32,17 @@ type User {
   age: Int!
 }
 
+type Vote {
+  _id: String!
+  # Message content
+  status: Boolean!
+}
+
+type Votes {
+  left: Int!
+  right: Int!
+}
+
 input UserInput {
   # Message content
   name: String!

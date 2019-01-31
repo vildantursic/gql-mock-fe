@@ -1,0 +1,7 @@
+#import "./VoteFragment.gql"
+
+mutation addVote ($input: VoteInput!) {
+  addVote (input: $input) {
+    ...Vote
+  }
+}

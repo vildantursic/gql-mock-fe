@@ -1,6 +1,6 @@
 #import "./UserFragment.gql"
 query users {
-  users {
+  users(fake: true) {
     ...User
   }
 }

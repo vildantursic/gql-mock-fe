@@ -1,0 +1,6 @@
+#import "./VoteFragment.gql"
+query votes {
+  votes {
+    ...Vote
+  }
+}

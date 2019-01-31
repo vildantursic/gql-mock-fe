@@ -1,0 +1,3 @@
+fragment Vote on Vote {
+  status
+}

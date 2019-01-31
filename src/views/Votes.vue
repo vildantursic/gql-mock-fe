@@ -27,11 +27,11 @@
 export default {
   methods: {
     onVoteAdded(previousResult, { subscriptionData }) {
+      console.log(previousResult)
       return {
-        numOfVotes: [
-          ...previousResult.numOfVotes,
-          subscriptionData.data.voteAdded,
-        ],
+        numOfVotes: {
+          ...subscriptionData.data.voteAdded,
+        },
       };
     },
   },
