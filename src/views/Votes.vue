@@ -1,7 +1,5 @@
 <template>
-  <div class="about">
-    <h1>Votes</h1>
-
+  <div class="votes">
     <!-- Apollo watched Graphql query -->
     <ApolloQuery
       :query="require('../graphql/NumOfVotes.gql')"
@@ -14,8 +12,8 @@
       <div slot-scope="{ result: { data } }">
         <template v-if="data">
           <div class="vote-box">
-            <div class="left">{{data.numOfVotes.left}}</div>
-            <div class="right">{{data.numOfVotes.right}}</div>
+            <div class="box">{{data.numOfVotes.left}}</div>
+            <div class="box">{{data.numOfVotes.right}}</div>
           </div>
         </template>
       </div>
@@ -27,7 +25,6 @@
 export default {
   methods: {
     onVoteAdded(previousResult, { subscriptionData }) {
-      console.log(previousResult)
       return {
         numOfVotes: {
           ...subscriptionData.data.voteAdded,
@@ -37,3 +34,26 @@ export default {
   },
 };
 </script>
+
+<style lang="scss" scoped>
+.votes {
+  height: 100vh;
+  background: black;
+  color: white;
+
+  .vote-box {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .box {
+      border: solid 3px white;
+      margin: 10px;
+      padding: 5px;
+      font-size: 25px;
+      font-weight: bold;
+    }
+  }
+}
+</style>
