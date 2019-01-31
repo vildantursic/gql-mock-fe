@@ -2,6 +2,9 @@
   "name": "front",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": "10.10.0"
+  },
   "scripts": {
     "start": "node server.js",
     "postinstall": "if test \"$NODE_ENV\" = \"production\" ; then npm run build ; fi ",
