@@ -1,6 +1,5 @@
 subscription votesCleared {
   votesCleared {
-      left
-      right
+      status
   }
 }
