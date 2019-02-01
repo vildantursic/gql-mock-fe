@@ -19,5 +19,10 @@ export default new Router({
       // which is lazy-loaded when the route is visited.
       component: () => import(/* webpackChunkName: "votes" */ './views/Votes.vue'),
     },
+    {
+      path: '/vote',
+      name: 'vote',
+      component: () => import('./views/Vote.vue'),
+    },
   ],
 });

@@ -32,6 +32,13 @@ type User {
   age: Int!
 }
 
+input UserInput {
+  # Message content
+  name: String!
+  surname: String!
+  age: Int!
+}
+
 type Vote {
   _id: String!
   # Message content
@@ -43,11 +50,13 @@ type Votes {
   right: Int!
 }
 
-input UserInput {
+type VotesCleared {
+  status: Boolean!
+}
+
+input VoteInput {
   # Message content
-  name: String!
-  surname: String!
-  age: Int!
+  status: Boolean!
 }
 
 type Query {
@@ -70,4 +79,5 @@ type Subscription {
   # When a new meetup is added
   meetupAdded: Meetup!
   userAdded: User!
+  votesCleared: VotesCleared!
 }

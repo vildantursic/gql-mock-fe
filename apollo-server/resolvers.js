@@ -68,6 +68,15 @@ export default {
 
       return vote;
     },
+    votesCleared: (root, args, { pubsub, db }) => {
+      db
+        .get('votes')
+        .write([]);
+
+      pubsub.publish('votesCleared', { voteAdded: { votesCleared: { status: true } } });
+
+      return [];
+    },
   },
 
   Subscription: {
@@ -97,6 +106,9 @@ export default {
     },
     voteAdded: {
       subscribe: (parent, args, { pubsub }) => pubsub.asyncIterator('votes'),
+    },
+    votesCleared: {
+      subscribe: (parent, args, { pubsub }) => pubsub.asyncIterator('votesCleared'),
     },
   },
 };
